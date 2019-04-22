@@ -24,10 +24,10 @@ We are going to use jsonserver and axios too.
 - package.json should contain at least:
 
 {
-  "name": "jest-test",
+  "name": "test-jest",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest --verbose"
   },
