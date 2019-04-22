@@ -1,4 +1,4 @@
-const { add, multiply, substraction, divide } = require('./arith')
+const { add, multiply, subtraction, divide } = require('./arith')
 
 test('2 + 3 = 5', () => {
     expect(add(2, 3)).toBe(5)
@@ -13,5 +13,5 @@ test(' 3 * 4 = 12', () => {
 })
 
 test('5 - 6 = -1', () => {
-    expect(substraction(5, 6)).toBe(-1)
+    expect(subtraction(5, 6)).toBe(-1)
 })
