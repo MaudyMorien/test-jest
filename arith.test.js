@@ -1,17 +1,25 @@
-const { add, multiply, substraction, divide } = require('./arith')
+const { add, multiply, subtraction, divide } = require('./arith')
 
-test('2 + 3 = 5', () => {
-    expect(add(2, 3)).toBe(5)
-})
+test.each([[1, 1, 2], [-1, 2, 1], [2, 1, 3]])(
+    '%i + %i equals %i', (a, b, expected) => {
+        expect(add(a, b)).toBe(expected)
+    },
+)
 
-test('8 / 4 = 2', () => {
-    expect(divide(8, 4)).toBe(2)
-})
+test.each([[1, 1, 0], [-1, 2, -3], [2, 2, 0]])(
+    '%i - %i equals %i', (a, b, expected) => {
+        expect(subtraction(a, b)).toBe(expected)
+    },
+)
 
-test(' 3 * 4 = 12', () => {
-    expect(multiply(3, 4)).toBe(12)
-})
+test.each([[1, 1, 1], [-1, 2, -2], [2, 2, 4]])(
+    '%i * %i equals %i', (a, b, expected) => {
+        expect(multiply(a, b)).toBe(expected)
+    },
+)
 
-test('5 - 6 = -1', () => {
-    expect(substraction(5, 6)).toBe(-1)
-})
+test.each([[1, 1, 1], [-1, 2, -0.5], [2, 2, 1]])(
+    '%i / %i equals %i', (a, b, expected) => {
+        expect(divide(a, b)).toBe(expected)
+    },
+)
